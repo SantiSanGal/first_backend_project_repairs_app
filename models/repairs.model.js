@@ -9,15 +9,20 @@ const Repair = db.define('repairs', {
         type: DataTypes.INTEGER
     },
     date: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,
         allowNull: false,
     },
     status: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
-    },
+        type: DataTypes.ENUM(
+          'pending',
+          'cancelled',
+          'completed'
+        ),
+        defaultValue: 'pending',
+      },
     userId: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 })
 

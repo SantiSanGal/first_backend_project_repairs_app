@@ -36,8 +36,6 @@ exports.createUser = async (req, res) => {
 };
 
 exports.updateUser = async (req, res) => {
-  // const { user } = req;
-
   const { id } = req.params;
 
   const user = await User.findOne({
@@ -64,7 +62,7 @@ exports.updateUser = async (req, res) => {
 };
 
 exports.deleteUser = async (req, res) => {
-//   const { id } = req.params;
+  const { id } = req.params;
 
   const user = await User.findOne({
     where: {
@@ -82,7 +80,7 @@ exports.deleteUser = async (req, res) => {
 };
 
 exports.findOneUser = async (req, res) => {
-//   const { id } = req.params;
+  const { id } = req.params;
 
   const user = await User.findOne({
     where: {
