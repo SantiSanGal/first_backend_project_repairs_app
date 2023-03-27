@@ -1,28 +1,28 @@
 const express = require('express');
 
 const repairsController = require('../controllers/repairs.controller');
-// const productsMiddleware = require('../middlewares/products.middleware')
+// const repairsMiddleware = require('../middlewares/repairs.middleware')
 
 const router = express.Router();
 router
   .route('/')
   .get(repairsController.findAllRepairs)
   .post(
-    // productsMiddleware.validProducts,
+    // repairsMiddleware.validRepairs,
     repairsController.createRepair
   );
 router
   .route('/:id')
   .get(
-    // productsMiddleware.ValidExistProduct, 
+    // repairsMiddleware.ValidExistProduct, 
     repairsController.findOneRepair)
   .patch(
-    // productsMiddleware.validProducts,
-    // productsMiddleware.ValidExistProduct,
+    // repairsMiddleware.validRepairs,
+    // repairsMiddleware.ValidExistProduct,
     repairsController.updateRepair
   )
   .delete(
-    // productsMiddleware.ValidExistProduct,
+    // repairsMiddleware.ValidExistProduct,
     repairsController.deleteRepair);
 
 module.exports = router;

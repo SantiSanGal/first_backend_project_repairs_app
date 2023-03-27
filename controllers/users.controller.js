@@ -5,7 +5,7 @@ exports.findAllUsers = async (req, res) => {
 
   const users = await User.findAll({
     where: {
-      status: true,
+      status: 'available',
     },
   });
 
@@ -41,17 +41,15 @@ exports.updateUser = async (req, res) => {
   const user = await User.findOne({
     where: {
       id,
-      status: true,
+      status: 'available',
     },
   });
 
-  const { name, email, password, role } = req.body;
+  const { name, email} = req.body;
 
   await user.update({
     name,
     email,
-    password,
-    role,
   });
 
   res.status(200).json({
@@ -67,11 +65,11 @@ exports.deleteUser = async (req, res) => {
   const user = await User.findOne({
     where: {
       id,
-      status: true,
+      status: 'available',
     },
   });
 
-  await user.update({ status: false });
+  await user.update({ status: 'not available' });
 
   res.status(200).json({
     status: 'success',
@@ -85,7 +83,7 @@ exports.findOneUser = async (req, res) => {
   const user = await User.findOne({
     where: {
       id,
-      status: true,
+      status: 'available',
     },
   });
 
