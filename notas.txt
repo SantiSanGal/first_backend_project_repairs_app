@@ -1,0 +1,13 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+********************MÉTODOS HTTP*********************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+POST
+    alta de datos
+GET
+    Leer, obtener
+PATCH
+    Actualizar ciertas partes
+PUT
+    Actualizar completo
+DELETE
+
